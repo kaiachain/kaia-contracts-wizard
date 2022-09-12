@@ -24,7 +24,7 @@ onDOMContentLoaded(function () {
     w.style.display = 'block';
     w.style.minHeight = '53rem';
 
-    const src = new URL('embed', currentScript.origin);
+    const src = new URL('embed.html', currentScript.origin);
 
     setSearchParam(w, src.searchParams, 'data-lang', 'lang');
     setSearchParam(w, src.searchParams, 'data-tab', 'tab');

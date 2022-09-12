@@ -4,7 +4,7 @@ import path from 'path';
 
 import { generateSources, writeGeneratedSources } from './generate/sources';
 import type { GenericOptions } from './build-generic';
-import { custom, erc1155, erc20, erc721, governor } from './api';
+import { custom, kip7, erc1155, erc20, erc721, governor } from './api';
 
 test('result compiles', async t => {
   const generatedSourcesPath = path.join(hre.config.paths.sources, 'generated');
@@ -23,6 +23,8 @@ test('result compiles', async t => {
 
 function isAccessControlRequired(opts: GenericOptions) {
   switch(opts.kind) {
+    case 'KIP7':
+      return kip7.isAccessControlRequired(opts);
     case 'ERC20':
       return erc20.isAccessControlRequired(opts);
     case 'ERC721':

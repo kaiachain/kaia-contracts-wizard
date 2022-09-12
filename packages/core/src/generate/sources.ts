@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 
+import { generateKIP7Options } from './kip7';
 import { generateERC20Options } from './erc20';
 import { generateERC721Options } from './erc721';
 import { generateERC1155Options } from './erc1155';
@@ -16,6 +17,10 @@ import type { Contract } from '../contract';
 type Subset = 'all' | 'minimal-cover';
 
 export function* generateOptions(): Generator<GenericOptions> {
+  for (const kindOpts of generateKIP7Options()) {
+    yield { kind: 'KIP7', ...kindOpts };
+  }
+
   for (const kindOpts of generateERC20Options()) {
     yield { kind: 'ERC20', ...kindOpts };
   }
@@ -74,8 +79,8 @@ function generateContractSubset(subset: Subset): GeneratedContract[] {
   } else {
     const getParents = (c: GeneratedContract) => c.contract.parents.map(p => p.contract.path);
     return [
-      ...findCover(contracts.filter(c => c.options.upgradeable), getParents),
-      ...findCover(contracts.filter(c => !c.options.upgradeable), getParents),
+      ...findCover(contracts.filter(c => !!('upgradeable' in c.options ? c.options.upgradeable : false)), getParents),
+      ...findCover(contracts.filter(c => !('upgradeable' in c.options ? c.options.upgradeable : false)), getParents),
     ];
   }
 }

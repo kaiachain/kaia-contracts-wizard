@@ -8,7 +8,8 @@ export type Access = typeof accessOptions[number];
 /**
  * Sets access control for the contract by adding inheritance.
  */
-export function setAccessControl(c: ContractBuilder, access: Access) {
+export function setAccessControl(c: ContractBuilder, access: Access, klaytn: boolean = false) {
+  const parents = getParents(klaytn)
   switch (access) {
     case 'ownable': {
       c.addParent(parents.Ownable);
@@ -27,12 +28,12 @@ export function setAccessControl(c: ContractBuilder, access: Access) {
 /**
  * Enables access control for the contract and restricts the given function with access control.
  */
-export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, access: Access, role: string) {
+export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, access: Access, role: string, klaytn: boolean = false) {
   if (access === false) {
     access = 'ownable';
   }
   
-  setAccessControl(c, access);
+  setAccessControl(c, access, klaytn);
 
   switch (access) {
     case 'ownable': {
@@ -50,13 +51,16 @@ export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, acces
   }
 }
 
-const parents = {
-  Ownable: {
-    name: 'Ownable',
-    path: '@openzeppelin/contracts/access/Ownable.sol',
-  },
-  AccessControl: {
-    name: 'AccessControl',
-    path: '@openzeppelin/contracts/access/AccessControl.sol',
-  },
-};
+function getParents(klaytn: boolean = false) {
+  const prefix = klaytn ? '@klaytn/contracts/contracts' : '@openzeppelin/contracts'
+  return {
+    Ownable: {
+      name: 'Ownable',
+      path: `${prefix}/access/Ownable.sol`,
+    },
+    AccessControl: {
+      name: 'AccessControl',
+      path: `${prefix}/access/AccessControl.sol`,
+    },
+  }
+}

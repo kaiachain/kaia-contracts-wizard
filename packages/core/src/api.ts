@@ -1,4 +1,5 @@
 import type { CommonOptions } from './common-options';
+import { printKIP7, defaults as kip7defaults, isAccessControlRequired as kip7IsAccessControlRequired, KIP7Options } from './kip7';
 import { printERC20, defaults as erc20defaults, isAccessControlRequired as erc20IsAccessControlRequired, ERC20Options } from './erc20';
 import { printERC721, defaults as erc721defaults, isAccessControlRequired as erc721IsAccessControlRequired, ERC721Options } from './erc721';
 import { printERC1155, defaults as erc1155defaults, isAccessControlRequired as erc1155IsAccessControlRequired, ERC1155Options } from './erc1155';
@@ -23,12 +24,18 @@ export interface WizardContractAPI<Options extends CommonOptions> {
   isAccessControlRequired: (opts: Partial<Options>) => boolean,
 }
 
+export type KIP7 = WizardContractAPI<KIP7Options>;
 export type ERC20 = WizardContractAPI<ERC20Options>;
 export type ERC721 = WizardContractAPI<ERC721Options>;
 export type ERC1155 = WizardContractAPI<ERC1155Options>;
 export type Governor = WizardContractAPI<GovernorOptions>;
 export type Custom = WizardContractAPI<CustomOptions>;
 
+export const kip7: KIP7 = {
+  print: printKIP7,
+  defaults: kip7defaults,
+  isAccessControlRequired: kip7IsAccessControlRequired
+}
 export const erc20: ERC20 = {
   print: printERC20,
   defaults: erc20defaults,

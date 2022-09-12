@@ -13,6 +13,7 @@ This package provides a programmatic API. For a web interface, see https://wizar
 ### Contract types
 
 The following contract types are supported:
+- `kip7`
 - `erc20`
 - `erc721`
 - `erc1155`
@@ -24,6 +25,9 @@ Each contract type has functions/constants as defined below.
 ### Functions
 
 #### `print`
+```js
+function print(opts?: KIP7Options): string
+```
 ```js
 function print(opts?: ERC20Options): string
 ```
@@ -46,7 +50,7 @@ Returns a string representation of a contract generated using the provided optio
 const defaults: Required<ERC20Options>
 ```
 ```js
-const defaults: Required<ERC721Options>
+const defaults: Required<KIP7Options>
 ```
 ```js
 const defaults: Required<ERC1155Options>
@@ -60,6 +64,9 @@ const defaults: Required<CustomOptions>
 The default options that are used for [`print`](#print).
 
 #### `isAccessControlRequired`
+```js
+function isAccessControlRequired(opts: Partial<KIP7Options>): boolean
+```
 ```js
 function isAccessControlRequired(opts: Partial<ERC20Options>): boolean
 ```

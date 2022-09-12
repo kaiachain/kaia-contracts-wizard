@@ -3,6 +3,7 @@
 
     import hljs from './highlightjs';
 
+    import KIP7Controls from './KIP7Controls.svelte';
     import ERC20Controls from './ERC20Controls.svelte';
     import ERC721Controls from './ERC721Controls.svelte';
     import ERC1155Controls from './ERC1155Controls.svelte';
@@ -29,7 +30,7 @@
 
     const dispatch = createEventDispatcher();
 
-    export let tab: Kind = 'ERC20';
+    export let tab: Kind = 'KIP7';
     $: {
       tab = sanitizeKind(tab);
       dispatch('tab-change', tab);
@@ -73,7 +74,7 @@
       e.preventDefault();
       if ((e.target as Element)?.classList.contains('disabled')) return;
       const versionedCode = printContractVersioned(contract);
-      window.open(remixURL(versionedCode, !!opts?.upgradeable).toString(), '_blank');
+      window.open(remixURL(versionedCode, !!((opts && 'upgradeable' in opts) ? opts.upgradeable : false)).toString(), '_blank');
       if (opts) {
         await postConfig(opts, 'remix', language);
       }
@@ -104,6 +105,9 @@
   <div class="header flex flex-row justify-between">
     <div class="tab overflow-hidden">
       <OverflowMenu>
+        <button class:selected={tab === 'KIP7'} on:click={() => tab = 'KIP7'}>
+          KIP7
+        </button>
         <button class:selected={tab === 'ERC20'} on:click={() => tab = 'ERC20'}>
           ERC20
         </button>
@@ -130,7 +134,7 @@
 
       <Tooltip
         let:trigger
-        disabled={!(opts?.upgradeable === "transparent")}
+        disabled={!((opts && 'upgradeable' in opts) ? opts?.upgradeable === "transparent" : false)}
         theme="light-red border"
         hideOnClick={false}
         interactive
@@ -138,7 +142,7 @@
         <button
           use:trigger
           class="action-button"
-          class:disabled={opts?.upgradeable === "transparent"}
+          class:disabled={(opts && 'upgradeable' in opts) ? opts?.upgradeable === "transparent" : false}
           on:click={remixHandler}
         >
           <RemixIcon />
@@ -183,6 +187,9 @@
 
   <div class="flex flex-row gap-4 grow">
     <div class="controls w-64 flex flex-col shrink-0 justify-between">
+      <div class:hidden={tab !== 'KIP7'}>
+        <KIP7Controls bind:opts={allOpts.KIP7} />
+      </div>
       <div class:hidden={tab !== 'ERC20'}>
         <ERC20Controls bind:opts={allOpts.ERC20} />
       </div>
