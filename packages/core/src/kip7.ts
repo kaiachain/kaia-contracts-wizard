@@ -6,6 +6,7 @@ import { withCommonDefaults, defaults as commonDefaults } from './common-options
 import { setInfo } from './set-info';
 import type { Info } from "./set-info";
 import { printContract } from './print';
+import {supportsInterface} from "./common-functions";
 
 export interface KIP7Options {
   access?: Access;
@@ -125,6 +126,7 @@ function addBase(c: ContractBuilder, name: string, symbol: string) {
   c.addOverride('KIP7', functions._afterTokenTransfer);
   c.addOverride('KIP7', functions._mint);
   c.addOverride('KIP7', functions._burn);
+  c.addOverride('KIP7', supportsInterface);
 }
 
 function addBurnable(c: ContractBuilder) {
