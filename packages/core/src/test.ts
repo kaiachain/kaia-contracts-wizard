@@ -4,13 +4,13 @@ import path from 'path';
 
 import { generateSources, writeGeneratedSources } from './generate/sources';
 import type { GenericOptions } from './build-generic';
-import { custom, kip7, erc1155, erc20, erc721, governor } from './api';
+import { custom, kip7, kip17, erc1155, erc20, erc721, governor } from './api';
 
 test('result compiles', async t => {
   const generatedSourcesPath = path.join(hre.config.paths.sources, 'generated');
   await writeGeneratedSources(generatedSourcesPath, 'all');
 
-  // We only want to check that contracts compile and we don't care about any
+  // We only want to check that contracts compile, and we don't care about any
   // of the outputs. Setting empty outputSelection causes compilation to go a
   // lot faster and not run out of memory.
   for (const { settings } of hre.config.solidity.compilers) {
@@ -25,6 +25,8 @@ function isAccessControlRequired(opts: GenericOptions) {
   switch(opts.kind) {
     case 'KIP7':
       return kip7.isAccessControlRequired(opts);
+    case 'KIP17':
+      return kip17.isAccessControlRequired(opts);
     case 'ERC20':
       return erc20.isAccessControlRequired(opts);
     case 'ERC721':
