@@ -82,7 +82,7 @@ export function buildKIP17(opts: KIP17Options): Contract {
   }
 
   if (allOpts.pausable) {
-    addPausable(c, access, [functions._beforeTokenTransfer]);
+    addPausable(c, access, [functions._beforeTokenTransfer], true);
   }
 
   if (allOpts.burnable) {
@@ -97,7 +97,7 @@ export function buildKIP17(opts: KIP17Options): Contract {
     addVotes(c, allOpts.name);
   }
 
-  setAccessControl(c, access);
+  setAccessControl(c, access, true);
   setUpgradeable(c, upgradeable, access);
   setInfo(c, info);
 
@@ -154,7 +154,7 @@ function addBurnable(c: ContractBuilder) {
 
 function addMintable(c: ContractBuilder, access: Access, incremental = false, uriStorage = false) {
   const fn = getMintFunction(incremental, uriStorage);
-  requireAccessControl(c, fn, access, 'MINTER');
+  requireAccessControl(c, fn, access, 'MINTER', true);
 
   if (incremental) {
     c.addUsing({
