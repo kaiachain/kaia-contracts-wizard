@@ -83,14 +83,14 @@ testKIP17('mintable + incremental', {
 testKIP17('votes', {
   votes: true,
 });
-
+/**
 testKIP17('full upgradeable transparent', {
   mintable: true,
   enumerable: true,
   pausable: true,
   burnable: true,
   votes: true,
-  upgradeable: 'transparent',
+  // upgradeable: 'transparent',
 });
 
 testKIP17('full upgradeable uups', {
@@ -99,13 +99,13 @@ testKIP17('full upgradeable uups', {
   pausable: true,
   burnable: true,
   votes: true,
-  upgradeable: 'uups',
+  // upgradeable: 'uups',
 });
-
+**/
 testAPIEquivalence('API default');
 
 testAPIEquivalence('API basic', { name: 'CustomToken', symbol: 'CTK' });
-
+/***
 testAPIEquivalence('API full upgradeable', {
   name: 'CustomToken',
   symbol: 'CTK',
@@ -114,9 +114,9 @@ testAPIEquivalence('API full upgradeable', {
   pausable: true,
   burnable: true,
   votes: true,
-  upgradeable: 'uups',
+  // upgradeable: 'uups',
 });
-
+**/
 test('API assert defaults', async t => {
   t.is(kip17.print(kip17.defaults), kip17.print());
 });
@@ -124,6 +124,6 @@ test('API assert defaults', async t => {
 test('API isAccessControlRequired', async t => {
   t.is(kip17.isAccessControlRequired({ mintable: true }), true);
   t.is(kip17.isAccessControlRequired({ pausable: true }), true);
-  t.is(kip17.isAccessControlRequired({ upgradeable: 'uups' }), true);
-  t.is(kip17.isAccessControlRequired({ upgradeable: 'transparent' }), false);
+  // t.is(kip17.isAccessControlRequired({ upgradeable: 'uups' }), true);
+  // t.is(kip17.isAccessControlRequired({ upgradeable: 'transparent' }), false);
 });

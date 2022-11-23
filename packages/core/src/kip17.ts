@@ -4,11 +4,11 @@ import { addPausable } from './add-pausable';
 import { supportsInterface } from './common-functions';
 import { defineFunctions } from './utils/define-functions';
 import { CommonOptions, withCommonDefaults, defaults as commonDefaults } from './common-options';
-import { setUpgradeable } from './set-upgradeable';
-import { setInfo } from './set-info';
+// import { setUpgradeable } from './set-upgradeable';
+import {Info, setInfo} from './set-info';
 import { printContract } from './print';
 
-export interface KIP17Options extends CommonOptions {
+export interface KIP17Options {
   name: string;
   symbol: string;
   baseUri?: string;
@@ -19,6 +19,8 @@ export interface KIP17Options extends CommonOptions {
   mintable?: boolean;
   incremental?: boolean;
   votes?: boolean;
+  access?: Access;
+  info?: Info;
 }
 
 export const defaults: Required<KIP17Options> = {
@@ -33,7 +35,6 @@ export const defaults: Required<KIP17Options> = {
   incremental: false,
   votes: false,
   access: commonDefaults.access,
-  upgradeable: commonDefaults.upgradeable,
   info: commonDefaults.info
 } as const;
 
@@ -57,7 +58,7 @@ export function printKIP17(opts: KIP17Options = defaults): string {
 }
 
 export function isAccessControlRequired(opts: Partial<KIP17Options>): boolean {
-  return opts.mintable || opts.pausable || opts.upgradeable === 'uups';
+  return !!(opts.mintable || opts.pausable);
 }
 
 export function buildKIP17(opts: KIP17Options): Contract {
@@ -65,7 +66,7 @@ export function buildKIP17(opts: KIP17Options): Contract {
 
   const c = new ContractBuilder(allOpts.name);
 
-  const { access, upgradeable, info } = allOpts;
+  const { access, info } = allOpts;
 
   addBase(c, allOpts.name, allOpts.symbol);
 
@@ -98,7 +99,7 @@ export function buildKIP17(opts: KIP17Options): Contract {
   }
 
   setAccessControl(c, access, true);
-  setUpgradeable(c, upgradeable, access);
+  // setUpgradeable(c, upgradeable, access);
   setInfo(c, info);
 
   return c;
