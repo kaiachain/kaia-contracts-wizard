@@ -151,6 +151,7 @@ function addBurnable(c: ContractBuilder) {
     name: 'KIP17Burnable',
     path: '@klaytn/contracts/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol',
   });
+  c.addOverride('KIP17Burnable', supportsInterface);
 }
 
 function addMintable(c: ContractBuilder, access: Access, incremental = false, uriStorage = false) {
