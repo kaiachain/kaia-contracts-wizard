@@ -8,7 +8,7 @@ After the branch policy change, please check your local or forked repository set
 
 This repository is forked from Openzepplin Contracts Wizard. This is a web application to interactively build a contract out of components from Klaytn Contracts. Select the kind of contract that you want, set your parameters and desired features, and the Wizard will generate all of the code necessary. The resulting code is ready to be compiled and deployed, or it can serve as a starting point and customized further with application specific logic.
 
-![](./screenshot.png)
+![](./Klaytn_Wizard.png)
 
 ## Development
 
