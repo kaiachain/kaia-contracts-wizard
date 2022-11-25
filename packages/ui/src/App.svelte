@@ -5,6 +5,7 @@
 
     import KIP7Controls from './KIP7Controls.svelte';
     import KIP17Controls from './KIP17Controls.svelte';
+    import KIP37Controls from './KIP37Controls.svelte';
     import ERC20Controls from './ERC20Controls.svelte';
     import ERC721Controls from './ERC721Controls.svelte';
     import ERC1155Controls from './ERC1155Controls.svelte';
@@ -31,7 +32,7 @@
 
     const dispatch = createEventDispatcher();
 
-    export let tab: Kind = 'KIP17'; // TODO: here define kip17 like tabs
+    export let tab: Kind = 'KIP17';
     $: {
       tab = sanitizeKind(tab);
       dispatch('tab-change', tab);
@@ -106,11 +107,14 @@
   <div class="header flex flex-row justify-between">
     <div class="tab overflow-hidden">
       <OverflowMenu>
+        <button class:selected={tab === 'KIP7'} on:click={() => tab = 'KIP7'}>
+          KIP7
+        </button>
         <button class:selected={tab === 'KIP17'} on:click={() => tab = 'KIP17'}>
           KIP17
         </button>
-        <button class:selected={tab === 'KIP7'} on:click={() => tab = 'KIP7'}>
-          KIP7
+        <button class:selected={tab === 'KIP37'} on:click={() => tab = 'KIP37'}>
+          KIP37
         </button>
         <button class:selected={tab === 'ERC20'} on:click={() => tab = 'ERC20'}>
           ERC20
@@ -172,7 +176,7 @@
           <FileIcon />
           <div class="download-option-content">
             <p>Single file</p>
-            <p>Requires installation of npm package (<code>@openzeppelin/contracts</code>).</p>
+            <p>Requires installation of npm package (<code>@openzeppelin/contracts</code>).</p> <!-- TODO: @klaytn/contracts should be added asd well ? -->
             <p>Simple to receive updates.</p>
           </div>
         </button>
@@ -196,6 +200,9 @@
       </div>
       <div class:hidden={tab !== 'KIP17'}>
         <KIP17Controls bind:opts={allOpts.KIP17} />
+      </div>
+      <div class:hidden={tab !== 'KIP37'}>
+        <KIP37Controls bind:opts={allOpts.KIP37} />
       </div>
       <div class:hidden={tab !== 'ERC20'}>
         <ERC20Controls bind:opts={allOpts.ERC20} />
