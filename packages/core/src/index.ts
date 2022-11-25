@@ -20,4 +20,4 @@ export { OptionsError } from './error';
 export type { Kind } from './kind';
 export { sanitizeKind } from './kind';
 
-export { kip7, kip17, erc20, erc721, erc1155, governor, custom } from './api';
+export { kip7, kip17, kip37, erc20, erc721, erc1155, governor, custom } from './api';

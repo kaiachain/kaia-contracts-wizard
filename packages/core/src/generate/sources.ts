@@ -4,6 +4,7 @@ import crypto from 'crypto';
 
 import { generateKIP7Options } from './kip7';
 import { generateKIP17Options } from './kip17';
+import { generateKIP37Options } from './kip37';
 import { generateERC20Options } from './erc20';
 import { generateERC721Options } from './erc721';
 import { generateERC1155Options } from './erc1155';
@@ -24,6 +25,10 @@ export function* generateOptions(): Generator<GenericOptions> {
 
   for (const kindOpts of generateKIP17Options()) {
     yield { kind: 'KIP17', ...kindOpts };
+  }
+
+  for (const kindOpts of generateKIP37Options()) {
+    yield { kind: 'KIP37', ...kindOpts };
   }
 
   for (const kindOpts of generateERC20Options()) {
