@@ -1,9 +1,9 @@
 {
-  "name": "@openzeppelin/wizard",
+  "name": "@klaytn/wizard",
   "version": "0.1.1",
-  "description": "A boilerplate generator to get started with OpenZeppelin Contracts",
+  "description": "A boilerplate generator to get started with Klaytn Contracts",
   "license": "MIT",
-  "repository": "github:OpenZeppelin/contracts-wizard",
+  "repository": "https://github.com/klaytn/klaytn-contracts-wizard.git",
   "main": "dist/index.js",
   "ts:main": "src/index.ts",
   "files": [
