@@ -32,7 +32,7 @@ export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, acces
   if (access === false) {
     access = 'ownable';
   }
-  
+
   setAccessControl(c, access, klaytn);
 
   switch (access) {
@@ -52,7 +52,7 @@ export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, acces
 }
 
 function getParents(klaytn: boolean = false) {
-  const prefix = klaytn ? '@klaytn/contracts/contracts' : '@openzeppelin/contracts'
+  const prefix = klaytn ? '@klaytn/contracts' : '@openzeppelin/contracts'
   return {
     Ownable: {
       name: 'Ownable',
