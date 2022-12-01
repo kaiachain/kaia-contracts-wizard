@@ -109,7 +109,7 @@ function addBase(c: ContractBuilder, name: string, symbol: string) {
   c.addParent(
     {
       name: 'KIP17',
-      path: '@klaytn/contracts/contracts/KIP/token/KIP17/KIP17.sol',
+      path: '@klaytn/contracts/KIP/token/KIP17/KIP17.sol',
     },
     [name, symbol],
   );
@@ -129,7 +129,7 @@ function addBaseURI(c: ContractBuilder, baseUri: string) {
 function addEnumerable(c: ContractBuilder) {
   c.addParent({
     name: 'KIP17Enumerable',
-    path: '@klaytn/contracts/contracts/KIP/token/KIP17/extensions/KIP17Enumerable.sol',
+    path: '@klaytn/contracts/KIP/token/KIP17/extensions/KIP17Enumerable.sol',
   });
 
   c.addOverride('KIP17Enumerable', functions._beforeTokenTransfer);
@@ -139,7 +139,7 @@ function addEnumerable(c: ContractBuilder) {
 function addURIStorage(c: ContractBuilder) {
   c.addParent({
     name: 'KIP17URIStorage',
-    path: '@klaytn/contracts/contracts/KIP/token/KIP17/extensions/KIP17URIStorage.sol',
+    path: '@klaytn/contracts/KIP/token/KIP17/extensions/KIP17URIStorage.sol',
   });
 
   c.addOverride('KIP17URIStorage', functions._burn);
@@ -149,7 +149,7 @@ function addURIStorage(c: ContractBuilder) {
 function addBurnable(c: ContractBuilder) {
   c.addParent({
     name: 'KIP17Burnable',
-    path: '@klaytn/contracts/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol',
+    path: '@klaytn/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol',
   });
   c.addOverride('KIP17Burnable', supportsInterface);
 }
@@ -161,7 +161,7 @@ function addMintable(c: ContractBuilder, access: Access, incremental = false, ur
   if (incremental) {
     c.addUsing({
       name: 'Counters',
-      path: '@klaytn/contracts/contracts/utils/Counters.sol',
+      path: '@klaytn/contracts/utils/Counters.sol',
     }, 'Counters.Counter');
     c.addVariable('Counters.Counter private _tokenIdCounter;');
     c.addFunctionCode('uint256 tokenId = _tokenIdCounter.current();', fn);
@@ -180,14 +180,14 @@ function addVotes(c: ContractBuilder, name: string) {
   c.addParent(
     {
       name: 'EIP712',
-      path: '@klaytn/contracts/contracts/utils/cryptography/draft-EIP712.sol',
+      path: '@klaytn/contracts/utils/cryptography/draft-EIP712.sol',
     },
     [name, "1"]
   );
   c.addParent(
     {
       name: 'KIP17Votes',
-      path: '@klaytn/contracts/contracts/KIP/token/KIP17/extensions/draft-KIP17Votes.sol',
+      path: '@klaytn/contracts/KIP/token/KIP17/extensions/draft-KIP17Votes.sol',
     });
   c.addOverride('KIP17Votes', functions._afterTokenTransfer);
 }

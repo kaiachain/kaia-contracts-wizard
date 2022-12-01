@@ -48,7 +48,7 @@ export const kip17: KIP17 = {
 export const kip37: KIP37 = {
   print: printKIP37,
   defaults: kip37defaults,
-  isAccessControlRequired: kip17IsAccessControlRequired
+  isAccessControlRequired: kip37IsAccessControlRequired
 }
 export const erc20: ERC20 = {
   print: printERC20,

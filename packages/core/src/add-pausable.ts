@@ -3,7 +3,7 @@ import { Access, requireAccessControl } from './set-access-control';
 import { defineFunctions } from './utils/define-functions';
 
 export function addPausable(c: ContractBuilder, access: Access, pausableFns: BaseFunction[], klaytn: boolean = false) {
-  const prefix = klaytn ? '@klaytn/contracts/contracts' : '@openzeppelin/contracts'
+  const prefix = klaytn ? '@klaytn/contracts' : '@openzeppelin/contracts'
   c.addParent({
     name: 'Pausable',
     path: `${prefix}/security/Pausable.sol`,
