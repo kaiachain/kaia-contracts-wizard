@@ -91,7 +91,7 @@ function addBase(c: ContractBuilder, uri: string) {
   c.addParent(
     {
       name: 'KIP37',
-      path: '@klaytn/contracts/contracts/KIP/token/KIP37/KIP37.sol',
+      path: '@klaytn/contracts/KIP/token/KIP37/KIP37.sol',
     },
     [uri],
   );
@@ -103,7 +103,7 @@ function addBase(c: ContractBuilder, uri: string) {
 function addBurnable(c: ContractBuilder) {
   c.addParent({
     name: 'KIP37Burnable',
-    path: '@klaytn/contracts/contracts/KIP/token/KIP37/extensions/KIP37Burnable.sol',
+    path: '@klaytn/contracts/KIP/token/KIP37/extensions/KIP37Burnable.sol',
   });
   c.addOverride('KIP37Burnable', supportsInterface);
 }
@@ -123,9 +123,9 @@ function addSetUri(c: ContractBuilder, access: Access) {
 function addSupply(c: ContractBuilder) {
   c.addParent({
     name: 'KIP37Supply',
-    path: '@klaytn/contracts/contracts/KIP/token/KIP37/extensions/KIP37Supply.sol',
+    path: '@klaytn/contracts/KIP/token/KIP37/extensions/KIP37Supply.sol',
   });
-  c.addOverride('KIP37Supply', functions._beforeTokenTransfer);
+  // c.addOverride('KIP37Supply', functions._beforeTokenTransfer);
 }
 
 const functions = defineFunctions({

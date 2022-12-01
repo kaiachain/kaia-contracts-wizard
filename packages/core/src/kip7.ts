@@ -115,11 +115,11 @@ export function buildKIP7(opts: KIP7Options): Contract {
 
 function addBase(c: ContractBuilder, name: string, symbol: string) {
   c.addParent(
-      {
-        name: 'KIP7',
-        path: '@klaytn/contracts/KIP/token/KIP7/KIP7.sol',
-      },
-      [name, symbol],
+    {
+      name: 'KIP7',
+      path: '@klaytn/contracts/contracts/KIP/token/KIP7/KIP7.sol',
+    },
+    [name, symbol],
   );
 
   c.addOverride('KIP7', functions._beforeTokenTransfer);
@@ -132,7 +132,7 @@ function addBase(c: ContractBuilder, name: string, symbol: string) {
 function addBurnable(c: ContractBuilder) {
   c.addParent({
     name: 'KIP7Burnable',
-    path: '@klaytn/contracts/KIP/token/KIP7/extensions/KIP7Burnable.sol',
+    path: '@klaytn/contracts/contracts/KIP/token/KIP7/extensions/KIP7Burnable.sol',
   });
 
   c.addOverride('KIP7Burnable', functions.supportsInterface)
@@ -150,7 +150,7 @@ function addSupportsInterface(c: ContractBuilder, access: Access, permit: boolea
             interfaceId == type(IKIP7Permit).interfaceId ||`
   if (votes) body = body + `
             interfaceId == type(IVotes).interfaceId ||`
-  body = body + `
+            body = body + `
             super.supportsInterface(interfaceId);`
   c.setFunctionBody([body], functions.supportsInterface);
 }
@@ -158,7 +158,7 @@ function addSupportsInterface(c: ContractBuilder, access: Access, permit: boolea
 function addSnapshot(c: ContractBuilder, access: Access) {
   c.addParent({
     name: 'KIP7Snapshot',
-    path: '@klaytn/contracts/KIP/token/KIP7/extensions/KIP7Snapshot.sol',
+    path: '@klaytn/contracts/contracts/KIP/token/KIP7/extensions/KIP7Snapshot.sol',
   });
 
   c.addOverride('KIP7Snapshot', functions._beforeTokenTransfer);
@@ -194,7 +194,7 @@ function addMintable(c: ContractBuilder, access: Access) {
 function addPermit(c: ContractBuilder, name: string) {
   c.addParent({
     name: 'KIP7Permit',
-    path: '@klaytn/contracts/KIP/token/KIP7/extensions/draft-KIP7Permit.sol',
+    path: '@klaytn/contracts/contracts/KIP/token/KIP7/extensions/draft-KIP7Permit.sol',
   }, [name]);
 }
 
@@ -205,7 +205,7 @@ function addVotes(c: ContractBuilder) {
 
   c.addParent({
     name: 'KIP7Votes',
-    path: '@klaytn/contracts/KIP/token/KIP7/extensions/KIP7Votes.sol',
+    path: '@klaytn/contracts/contracts/KIP/token/KIP7/extensions/KIP7Votes.sol',
   });
   c.addOverride('KIP7Votes', functions._mint);
   c.addOverride('KIP7Votes', functions._burn);
@@ -215,7 +215,7 @@ function addVotes(c: ContractBuilder) {
 function addFlashMint(c: ContractBuilder) {
   c.addParent({
     name: 'KIP7FlashMint',
-    path: '@klaytn/contracts/KIP/token/KIP7/extensions/KIP7FlashMint.sol',
+    path: '@klaytn/contracts/contracts/KIP/token/KIP7/extensions/KIP7FlashMint.sol',
   });
 }
 
