@@ -1,5 +1,7 @@
 import type { CommonOptions } from './common-options';
 import { printKIP7, defaults as kip7defaults, isAccessControlRequired as kip7IsAccessControlRequired, KIP7Options } from './kip7';
+import { printKIP17, defaults as kip17defaults, isAccessControlRequired as kip17IsAccessControlRequired, KIP17Options } from './kip17';
+import { printKIP37, defaults as kip37defaults, isAccessControlRequired as kip37IsAccessControlRequired, KIP37Options } from './kip37';
 import { printERC20, defaults as erc20defaults, isAccessControlRequired as erc20IsAccessControlRequired, ERC20Options } from './erc20';
 import { printERC721, defaults as erc721defaults, isAccessControlRequired as erc721IsAccessControlRequired, ERC721Options } from './erc721';
 import { printERC1155, defaults as erc1155defaults, isAccessControlRequired as erc1155IsAccessControlRequired, ERC1155Options } from './erc1155';
@@ -11,20 +13,22 @@ export interface WizardContractAPI<Options extends CommonOptions> {
    * Returns a string representation of a contract generated using the provided options. If opts is not provided, uses `defaults`.
    */
   print: (opts?: Options) => string,
-  
+
   /**
    * The default options that are used for `print`.
    */
   defaults: Required<Options>;
 
   /**
-   * Whether any of the provided options require access control to be enabled. If this returns `true`, then calling `print` with the 
-   * same options would cause the `access` option to default to `'ownable'` if it was `undefined` or `false`. 
+   * Whether any of the provided options require access control to be enabled. If this returns `true`, then calling `print` with the
+   * same options would cause the `access` option to default to `'ownable'` if it was `undefined` or `false`.
    */
   isAccessControlRequired: (opts: Partial<Options>) => boolean,
 }
 
 export type KIP7 = WizardContractAPI<KIP7Options>;
+export type KIP17 = WizardContractAPI<KIP17Options>;
+export type KIP37 = WizardContractAPI<KIP37Options>;
 export type ERC20 = WizardContractAPI<ERC20Options>;
 export type ERC721 = WizardContractAPI<ERC721Options>;
 export type ERC1155 = WizardContractAPI<ERC1155Options>;
@@ -35,6 +39,16 @@ export const kip7: KIP7 = {
   print: printKIP7,
   defaults: kip7defaults,
   isAccessControlRequired: kip7IsAccessControlRequired
+}
+export const kip17: KIP17 = {
+  print: printKIP17,
+  defaults: kip17defaults,
+  isAccessControlRequired: kip17IsAccessControlRequired
+}
+export const kip37: KIP37 = {
+  print: printKIP37,
+  defaults: kip37defaults,
+  isAccessControlRequired: kip37IsAccessControlRequired
 }
 export const erc20: ERC20 = {
   print: printERC20,

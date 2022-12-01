@@ -15,6 +15,8 @@ export function sanitizeKind(kind: unknown): Kind {
 function isKind<T>(value: Kind | T): value is Kind {
   switch (value) {
     case 'KIP7':
+    case 'KIP17':
+    case 'KIP37':
     case 'ERC20':
     case 'ERC1155':
     case 'ERC721':
