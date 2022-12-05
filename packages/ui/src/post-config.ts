@@ -1,4 +1,4 @@
-import type { GenericOptions } from '@openzeppelin/wizard';
+import type { GenericOptions } from '@klaytn/wizard';
 // import type { GenericOptions as CairoOptions } from '@openzeppelin/wizard-cairo';
 import { v4 as uuid } from 'uuid';
 
