@@ -22,8 +22,8 @@
     import OverflowMenu from './OverflowMenu.svelte';
     import Tooltip from './Tooltip.svelte';
 
-    import type { KindedOptions, Kind, Contract, OptionsErrorMessages } from '@openzeppelin/wizard';
-    import { ContractBuilder, buildGeneric, printContract, printContractVersioned, sanitizeKind, OptionsError } from '@openzeppelin/wizard';
+    import type { KindedOptions, Kind, Contract, OptionsErrorMessages } from '@klaytn/wizard';
+    import { ContractBuilder, buildGeneric, printContract, printContractVersioned, sanitizeKind, OptionsError } from '@klaytn/wizard';
     import { postConfig } from './post-config';
     import { remixURL } from './remix';
 
@@ -90,7 +90,7 @@
       }
     };
 
-    const zipModule = import('@openzeppelin/wizard/zip');
+    const zipModule = import('@klaytn/wizard/zip');
 
     const downloadVendoredHandler = async () => {
       const { zipContract } = await zipModule;

@@ -1,13 +1,13 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions, OptionsErrorMessages } from '@openzeppelin/wizard';
-  import { governor, infoDefaults } from '@openzeppelin/wizard';
+  import type { KindedOptions, OptionsErrorMessages } from '@klaytn/wizard';
+  import { governor, infoDefaults } from '@klaytn/wizard';
 
   import ToggleRadio from './inputs/ToggleRadio.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
   import InfoSection from './InfoSection.svelte';
-  
+
   import { error } from './error-tooltip';
   import { resizeToFit } from './resize-to-fit';
 
@@ -48,7 +48,7 @@
       disabledDecimals = false;
     } else if (!wasERC721Votes && opts.votes === 'erc721votes') {
       previousDecimals = opts.decimals;
-      opts.decimals = 0;     
+      opts.decimals = 0;
       disabledDecimals = true;
     }
 
@@ -194,7 +194,7 @@
       </HelpTooltip>
     </label>
   </h1>
-  
+
   <div class="checkbox-group">
     <label class:checked={opts.timelock === 'openzeppelin'}>
       <input type="radio" bind:group={opts.timelock} value="openzeppelin">
