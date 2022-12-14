@@ -11,7 +11,7 @@ This repository is forked from Openzepplin Contracts Wizard. This is a web appli
 ![](./tw-card.png)
 
 ## Development
-`npm i ` from the root folder to install all the dependencies 
+`yarn` from the root folder to install all the dependencies 
 
 `packages/core` contains the code generation logic for Solidity.
 
