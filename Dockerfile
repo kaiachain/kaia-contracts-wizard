@@ -8,5 +8,6 @@ COPY . .
 RUN npm install
 # exposing port
 EXPOSE 8080
+
 # command to run container
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "start"]
