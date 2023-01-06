@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "prepere": "wsrun -m prepare",
+    "prepare": "wsrun -m prepare",
     "build": "wsrun -m build",
     "start": "wsrun -m start"
 
