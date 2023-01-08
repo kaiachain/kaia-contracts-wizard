@@ -2,7 +2,11 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "prepare": "wsrun -m prepare"
+    "prepare": "wsrun -m prepare",
+    "build": "wsrun -m build",
+    "dev": "wsrun -m dev",
+    "start": "wsrun -m start"
+
   },
   "workspaces": {
     "packages": [
