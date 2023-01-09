@@ -76,7 +76,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP17#KIP17Burnable">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -91,21 +91,21 @@
     <label class:checked={opts.votes}>
       <input type="checkbox" bind:checked={opts.votes}>
       Votes
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP17#KIP17Votes">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/draft-KIP17Votes.sol">
         Keeps track of individual units for voting in on-chain governance, with a way to delegate one's voting power to a trusted account.
       </HelpTooltip>
     </label>
     <label class:checked={opts.enumerable}>
       <input type="checkbox" bind:checked={opts.enumerable}>
       Enumerable
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP17#KIP17Enumerable">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17Enumerable.sol">
         Allows on-chain enumeration of all tokens or those owned by an account. Increases gas cost of transfers.
       </HelpTooltip>
     </label>
     <label class:checked={opts.uriStorage}>
       <input type="checkbox" bind:checked={opts.uriStorage}>
       URI Storage
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP17#KIP17URIStorage">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17URIStorage.sol">
         Allows updating token URIs for individual token IDs.
       </HelpTooltip>
     </label>

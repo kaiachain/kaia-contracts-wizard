@@ -47,7 +47,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP37#KIP37Burnable">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP37/extensions/KIP37Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -69,7 +69,7 @@
     <label class:checked={opts.updatableUri}>
       <input type="checkbox" bind:checked={opts.updatableUri}>
       Updatable URI
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/KIP37#KIP37-_setURI-string-">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP37/extensions/KIP37URIStorage.sol">
         Privileged accounts will be able to set a new URI for all token types. Clients will replace any instance of {"{id}"} in the URI with the tokenId.
       </HelpTooltip>
     </label>

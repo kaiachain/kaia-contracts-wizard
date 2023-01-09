@@ -158,9 +158,7 @@
         </button>
         <div slot="content">
           Transparent upgradeable contracts are not supported on Remix.
-          Try using Remix with UUPS upgradability or use Hardhat or Truffle with
-          <a href="https://docs.openzeppelin.com/upgrades-plugins/" target="_blank">OpenZeppelin Upgrades</a>.
-          <br />
+          Try using Remix with UUPS upgradability or use Hardhat or Truffle
           <!-- svelte-ignore a11y-invalid-attribute -->
           <a href="#" on:click={remixHandler}>Open in Remix anyway</a>.
         </div>
@@ -176,7 +174,7 @@
           <FileIcon />
           <div class="download-option-content">
             <p>Single file</p>
-            <p>Requires installation of npm package (<code>@openzeppelin/contracts</code>).</p> <!-- TODO: @klaytn/contracts should be added asd well ? -->
+            <p>Requires installation of npm package (<code>@klaytn/contracts</code>).</p>
             <p>Simple to receive updates.</p>
           </div>
         </button>
@@ -220,10 +218,10 @@
         <CustomControls bind:opts={allOpts.Custom} />
       </div>
       <div class="controls-footer">
-        <a href="https://forum.openzeppelin.com/" target="_blank">
+        <a href="https://forum.klaytn.com/" target="_blank">
           <ForumIcon/> Forum
         </a>
-        <a href="https://docs.openzeppelin.com/" target="_blank">
+        <a href="https://docs.klaytn.foundation/" target="_blank">
           <DocsIcon/> Docs
         </a>
       </div>

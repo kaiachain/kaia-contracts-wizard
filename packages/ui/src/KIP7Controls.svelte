@@ -57,7 +57,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/kip7#KIP7Burnable">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -74,7 +74,7 @@
     <label class:checked={opts.permit || opts.votes}>
       <input type="checkbox" bind:checked={opts.permit}>
       Permit
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/kip7#KIP7Permit">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/draft-KIP7Permit.sol">
         Without paying gas, token holders will be able to allow third parties to transfer from their account.
         <br>
         <a href="https://eips.ethereum.org/EIPS/eip-2612">EIP</a> is still Draft and may change.
@@ -84,7 +84,7 @@
     <label class:checked={opts.votes}>
       <input type="checkbox" bind:checked={opts.votes}>
       Votes
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/kip7#KIP7Votes">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Votes.sol">
         Keeps track of historical balances for voting in on-chain governance, with a way to delegate one's voting power to a trusted account.
       </HelpTooltip>
     </label>
@@ -92,7 +92,7 @@
     <label class:checked={opts.flashmint}>
       <input type="checkbox" bind:checked={opts.flashmint}>
       Flash Minting
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/kip7#KIP7FlashMint">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7FlashMint.sol">
         Built-in flash loans. Lend tokens without requiring collateral as long as they're returned in the same transaction.
       </HelpTooltip>
     </label>
@@ -100,7 +100,7 @@
     <label class:checked={opts.snapshots}>
       <input type="checkbox" bind:checked={opts.snapshots}>
       Snapshots
-      <HelpTooltip link="https://docs.openzeppelin.com/contracts/4.x/api/token/kip7#KIP7Snapshot">
+      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Snapshot.sol">
         Privileged accounts will be able to store snapshots of balances that can be retrieved later.
         <br>
         For on-chain voting, the Votes option is preferable.
