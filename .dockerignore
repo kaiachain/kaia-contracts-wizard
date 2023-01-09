@@ -6,4 +6,6 @@ packages/ui/public/build
 packages/core/artifacts
 packages/core/cache
 packages/core/dist
+packages/core/contracts/generated
 packages/core/tsconfig.tsbuildinfo
+packages/core/openzeppelin-contracts.json
