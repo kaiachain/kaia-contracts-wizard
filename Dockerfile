@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 COPY . .
 # installing dependencies
 RUN npm install
+# building project
+RUN npm run build
 # exposing port
 EXPOSE 8080
 

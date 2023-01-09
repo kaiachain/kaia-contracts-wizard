@@ -1,2 +1,9 @@
 node_modules
 npm-debug.log
+packages/core/node_modules
+packages/ui/node_modules
+packages/ui/public/build
+packages/core/artifacts
+packages/core/cache
+packages/core/dist
+packages/core/tsconfig.tsbuildinfo
