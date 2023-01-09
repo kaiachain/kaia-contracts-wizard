@@ -41,5 +41,5 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET_PROD }}
           CLOUDFRONT_ID: ${{ secrets.CLOUDFRONT_ID_PROD }}
         run: |
-          aws s3 sync ./public/build s3://$S3_BUCKET --delete
+          aws s3 sync ./packages/ui/public/build s3://$S3_BUCKET --delete
           aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
