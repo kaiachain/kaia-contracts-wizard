@@ -22,8 +22,8 @@
     import OverflowMenu from './OverflowMenu.svelte';
     import Tooltip from './Tooltip.svelte';
 
-    import type { KindedOptions, Kind, Contract, OptionsErrorMessages } from '@klaytn/wizard';
-    import { ContractBuilder, buildGeneric, printContract, printContractVersioned, sanitizeKind, OptionsError } from '@klaytn/wizard';
+    import type { KindedOptions, Kind, Contract, OptionsErrorMessages } from '@kaiachain/wizard';
+    import { ContractBuilder, buildGeneric, printContract, printContractVersioned, sanitizeKind, OptionsError } from '@kaiachain/wizard';
     import { postConfig } from './post-config';
     import { remixURL } from './remix';
 
@@ -90,7 +90,7 @@
       }
     };
 
-    const zipModule = import('@klaytn/wizard/zip');
+    const zipModule = import('@kaiachain/wizard/zip');
 
     const downloadVendoredHandler = async () => {
       const { zipContract } = await zipModule;
@@ -174,7 +174,7 @@
           <FileIcon />
           <div class="download-option-content">
             <p>Single file</p>
-            <p>Requires installation of npm package (<code>@klaytn/contracts</code>).</p>
+            <p>Requires installation of npm package (<code>@kaiachain/contracts</code>).</p>
             <p>Simple to receive updates.</p>
           </div>
         </button>
@@ -218,10 +218,10 @@
         <CustomControls bind:opts={allOpts.Custom} />
       </div>
       <div class="controls-footer">
-        <a href="https://forum.klaytn.com/" target="_blank">
+        <a href="https://forum.kaia.io/" target="_blank">
           <ForumIcon/> Forum
         </a>
-        <a href="https://docs.klaytn.foundation/" target="_blank">
+        <a href="https://docs.kaia.io/" target="_blank">
           <DocsIcon/> Docs
         </a>
       </div>

@@ -1,8 +1,8 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions } from '@klaytn/wizard';
-  import { kip17,  infoDefaults } from '@klaytn/wizard';
+  import type { KindedOptions } from '@kaiachain/wizard';
+  import { kip17,  infoDefaults } from '@kaiachain/wizard';
 
   import AccessControlSection from './AccessControlSection.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
@@ -76,7 +76,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP17/extensions/KIP17Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -91,21 +91,21 @@
     <label class:checked={opts.votes}>
       <input type="checkbox" bind:checked={opts.votes}>
       Votes
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/draft-KIP17Votes.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP17/extensions/draft-KIP17Votes.sol">
         Keeps track of individual units for voting in on-chain governance, with a way to delegate one's voting power to a trusted account.
       </HelpTooltip>
     </label>
     <label class:checked={opts.enumerable}>
       <input type="checkbox" bind:checked={opts.enumerable}>
       Enumerable
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17Enumerable.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP17/extensions/KIP17Enumerable.sol">
         Allows on-chain enumeration of all tokens or those owned by an account. Increases gas cost of transfers.
       </HelpTooltip>
     </label>
     <label class:checked={opts.uriStorage}>
       <input type="checkbox" bind:checked={opts.uriStorage}>
       URI Storage
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP17/extensions/KIP17URIStorage.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP17/extensions/KIP17URIStorage.sol">
         Allows updating token URIs for individual token IDs.
       </HelpTooltip>
     </label>

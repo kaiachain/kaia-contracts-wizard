@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Upgradeable } from '@klaytn/wizard';
+  import type { Upgradeable } from '@kaiachain/wizard';
 
   import ToggleRadio from './inputs/ToggleRadio.svelte';
   import HelpTooltip from './HelpTooltip.svelte';

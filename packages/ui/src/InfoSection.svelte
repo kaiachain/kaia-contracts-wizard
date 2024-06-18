@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Info } from '@klaytn/wizard';
-  import { infoDefaults } from '@klaytn/wizard';
+  import type { Info } from '@kaiachain/wizard';
+  import { infoDefaults } from '@kaiachain/wizard';
 
   import HelpTooltip from './HelpTooltip.svelte';
 

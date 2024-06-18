@@ -8,8 +8,8 @@ export type Access = typeof accessOptions[number];
 /**
  * Sets access control for the contract by adding inheritance.
  */
-export function setAccessControl(c: ContractBuilder, access: Access, klaytn: boolean = false) {
-  const parents = getParents(klaytn)
+export function setAccessControl(c: ContractBuilder, access: Access, kaia: boolean = false) {
+  const parents = getParents(kaia)
   switch (access) {
     case 'ownable': {
       c.addParent(parents.Ownable);
@@ -28,12 +28,12 @@ export function setAccessControl(c: ContractBuilder, access: Access, klaytn: boo
 /**
  * Enables access control for the contract and restricts the given function with access control.
  */
-export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, access: Access, role: string, klaytn: boolean = false) {
+export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, access: Access, role: string, kaia: boolean = false) {
   if (access === false) {
     access = 'ownable';
   }
 
-  setAccessControl(c, access, klaytn);
+  setAccessControl(c, access, kaia);
 
   switch (access) {
     case 'ownable': {
@@ -51,8 +51,8 @@ export function requireAccessControl(c: ContractBuilder, fn: BaseFunction, acces
   }
 }
 
-function getParents(klaytn: boolean = false) {
-  const prefix = klaytn ? '@klaytn/contracts' : '@openzeppelin/contracts'
+function getParents(kaia: boolean = false) {
+  const prefix = kaia ? '@kaiachain/contracts' : '@openzeppelin/contracts'
   return {
     Ownable: {
       name: 'Ownable',

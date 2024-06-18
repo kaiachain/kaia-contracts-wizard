@@ -15,7 +15,7 @@ export function setUpgradeable(c: ContractBuilder, upgradeable: Upgradeable, acc
 
   c.addParent({
     name: 'Initializable',
-    path: '@klaytn/contracts/proxy/utils/Initializable.sol',
+    path: '@kaiachain/contracts/proxy/utils/Initializable.sol',
   });
 
   switch (upgradeable) {
@@ -25,7 +25,7 @@ export function setUpgradeable(c: ContractBuilder, upgradeable: Upgradeable, acc
       requireAccessControl(c, functions._authorizeUpgrade, access, 'UPGRADER');
       c.addParent({
         name: 'UUPSUpgradeable',
-        path: '@klaytn/contracts/proxy/utils/UUPSUpgradeable.sol',
+        path: '@kaiachain/contracts/proxy/utils/UUPSUpgradeable.sol',
       });
       c.addOverride('UUPSUpgradeable', functions._authorizeUpgrade);
       c.setFunctionBody([], functions._authorizeUpgrade);

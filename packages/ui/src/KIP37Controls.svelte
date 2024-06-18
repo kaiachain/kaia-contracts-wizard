@@ -1,8 +1,8 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions } from '@klaytn/wizard';
-  import { kip37, infoDefaults } from '@klaytn/wizard';
+  import type { KindedOptions } from '@kaiachain/wizard';
+  import { kip37, infoDefaults } from '@kaiachain/wizard';
 
   import AccessControlSection from './AccessControlSection.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
@@ -47,7 +47,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP37/extensions/KIP37Burnable.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP37/extensions/KIP37Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -69,7 +69,7 @@
     <label class:checked={opts.updatableUri}>
       <input type="checkbox" bind:checked={opts.updatableUri}>
       Updatable URI
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP37/extensions/KIP37URIStorage.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP37/extensions/KIP37URIStorage.sol">
         Privileged accounts will be able to set a new URI for all token types. Clients will replace any instance of {"{id}"} in the URI with the tokenId.
       </HelpTooltip>
     </label>

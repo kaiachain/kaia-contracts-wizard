@@ -1,14 +1,14 @@
-# Klaytn Contracts Wizard for Solidity
+# Kaia Contracts Wizard for Solidity
 
-[![NPM Package](https://img.shields.io/npm/v/@klaytn/wizard?color=%234e5de4)](https://www.npmjs.com/package/@klaytn/wizard)
+[![NPM Package](https://img.shields.io/npm/v/@kaiachain/wizard?color=%234e5de4)](https://www.npmjs.com/package/@kaiachain/wizard)
 
-Interactively build a contract out of components from Klaytn Contracts. Provide parameters and desired features for the kind of contract that you want, and the Wizard will generate all the code necessary. The resulting code is ready to be compiled and deployed, or it can serve as a starting point and customized further with application specific logic.
+Interactively build a contract out of components from Kaia Contracts. Provide parameters and desired features for the kind of contract that you want, and the Wizard will generate all the code necessary. The resulting code is ready to be compiled and deployed, or it can serve as a starting point and customized further with application specific logic.
 
-This package provides a programmatic API. For a web interface, see https://wizard.klaytn.com
+This package provides a programmatic API. For a web interface, see https://wizard.kaia.io
 
 ### Installation
 
-`npm install @klaytn/wizard`
+`npm install @kaiachain/wizard`
 
 ### Contract types
 
@@ -109,10 +109,10 @@ Whether any of the provided options require access control to be enabled. If thi
 
 ### Examples
 
-Import the contract type(s) that you want to use from the `@klaytn/wizard` package:
+Import the contract type(s) that you want to use from the `@kaiachain/wizard` package:
 
 ```js
-import { kip7 } from '@klaytn/wizard';
+import { kip7 } from '@kaiachain/wizard';
 ```
 
 To generate the source code for an KIP7 contract with all the default settings:

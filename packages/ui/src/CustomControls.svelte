@@ -1,8 +1,8 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions } from '@klaytn/wizard';
-  import { custom, infoDefaults } from '@klaytn/wizard';
+  import type { KindedOptions } from '@kaiachain/wizard';
+  import { custom, infoDefaults } from '@kaiachain/wizard';
 
   import AccessControlSection from './AccessControlSection.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
