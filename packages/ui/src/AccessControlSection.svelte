@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Access } from '@klaytn/wizard';
+  import type { Access } from '@kaiachain/wizard';
 
   import ToggleRadio from './inputs/ToggleRadio.svelte';
   import HelpTooltip from './HelpTooltip.svelte';

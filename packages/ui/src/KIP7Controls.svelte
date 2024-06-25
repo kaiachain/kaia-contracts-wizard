@@ -1,8 +1,8 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions } from '@klaytn/wizard';
-  import { kip7, premintPattern, infoDefaults } from '@klaytn/wizard';
+  import type { KindedOptions } from '@kaiachain/wizard';
+  import { kip7, premintPattern, infoDefaults } from '@kaiachain/wizard';
 
   import AccessControlSection from './AccessControlSection.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
@@ -57,7 +57,7 @@
     <label class:checked={opts.burnable}>
       <input type="checkbox" bind:checked={opts.burnable}>
       Burnable
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Burnable.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP7/extensions/KIP7Burnable.sol">
         Token holders will be able to destroy their tokens.
       </HelpTooltip>
     </label>
@@ -74,7 +74,7 @@
     <label class:checked={opts.permit || opts.votes}>
       <input type="checkbox" bind:checked={opts.permit}>
       Permit
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/draft-KIP7Permit.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP7/extensions/draft-KIP7Permit.sol">
         Without paying gas, token holders will be able to allow third parties to transfer from their account.
         <br>
         <a href="https://eips.ethereum.org/EIPS/eip-2612">EIP</a> is still Draft and may change.
@@ -84,7 +84,7 @@
     <label class:checked={opts.votes}>
       <input type="checkbox" bind:checked={opts.votes}>
       Votes
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Votes.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP7/extensions/KIP7Votes.sol">
         Keeps track of historical balances for voting in on-chain governance, with a way to delegate one's voting power to a trusted account.
       </HelpTooltip>
     </label>
@@ -92,7 +92,7 @@
     <label class:checked={opts.flashmint}>
       <input type="checkbox" bind:checked={opts.flashmint}>
       Flash Minting
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7FlashMint.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP7/extensions/KIP7FlashMint.sol">
         Built-in flash loans. Lend tokens without requiring collateral as long as they're returned in the same transaction.
       </HelpTooltip>
     </label>
@@ -100,7 +100,7 @@
     <label class:checked={opts.snapshots}>
       <input type="checkbox" bind:checked={opts.snapshots}>
       Snapshots
-      <HelpTooltip link="https://github.com/klaytn/klaytn-contracts/blob/master/contracts/KIP/token/KIP7/extensions/KIP7Snapshot.sol">
+      <HelpTooltip link="https://github.com/kaiachain/kaia-contracts/blob/main/contracts/KIP/token/KIP7/extensions/KIP7Snapshot.sol">
         Privileged accounts will be able to store snapshots of balances that can be retrieved later.
         <br>
         For on-chain voting, the Votes option is preferable.

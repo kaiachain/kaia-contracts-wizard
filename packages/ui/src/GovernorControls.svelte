@@ -1,8 +1,8 @@
 <script lang="ts">
   import HelpTooltip from './HelpTooltip.svelte';
 
-  import type { KindedOptions, OptionsErrorMessages } from '@klaytn/wizard';
-  import { governor, infoDefaults } from '@klaytn/wizard';
+  import type { KindedOptions, OptionsErrorMessages } from '@kaiachain/wizard';
+  import { governor, infoDefaults } from '@kaiachain/wizard';
 
   import ToggleRadio from './inputs/ToggleRadio.svelte';
   import UpgradeabilitySection from './UpgradeabilitySection.svelte';
