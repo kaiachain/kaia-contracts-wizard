@@ -1,5 +1,5 @@
 
-FROM node:16
+FROM node:18
 # working directory
 WORKDIR /usr/src/app
 # copying project to the working directory
