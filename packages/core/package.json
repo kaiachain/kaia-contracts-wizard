@@ -1,6 +1,6 @@
 {
   "name": "@kaiachain/wizard",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A boilerplate generator to get started with Kaia Contracts",
   "license": "MIT",
   "repository": "https://github.com/kaiachain/kaia-contracts-wizard.git",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@openzeppelin/contracts": "4.7.3",
     "@openzeppelin/contracts-upgradeable": "4.7.3",
-    "@kaiachain/contracts": "1.0.0",
+    "@kaiachain/contracts": "1.0.1",
     "@types/node": "^10.17.51",
     "@types/rimraf": "^3.0.0",
     "array.prototype.flat": "^1.2.4",
